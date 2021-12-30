@@ -1,5 +1,7 @@
 package co.za.myprofileservice.web;
 
+import javax.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import co.za.myprofileservice.data.EmailTemplateDTO;
 import co.za.myprofileservice.servicesImpl.EmailTemplateServiceImpl;
 
-@RequestMapping("/my-prfile/send")
+@RequestMapping("/mkhuseli/send")
 @RestController
 @CrossOrigin
 public class EmailTemplateController {
@@ -22,10 +24,11 @@ public class EmailTemplateController {
 		this.emailTemplateServiceImpl = emailTemplateServiceImpl;
 		
 	}
-	
-	@PostMapping("email")
-	public ResponseEntity<EmailTemplateDTO> sendEmail(@RequestBody EmailTemplateDTO emailTemplate){
-		return new ResponseEntity<>(emailTemplateServiceImpl.sendEmail(emailTemplate), HttpStatus.OK);
+	//sending email
+	@PostMapping("/email")
+	public ResponseEntity<EmailTemplateDTO> sendEmail(@Valid @RequestBody EmailTemplateDTO emailTemplate){
+		
+		return new ResponseEntity<>(emailTemplateServiceImpl.sendEmail(emailTemplate), HttpStatus.CREATED);
 		
 	}
 

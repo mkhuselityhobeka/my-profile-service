@@ -2,14 +2,28 @@ package co.za.myprofileservice.data;
 
 import java.util.Objects;
 
+import javax.validation.constraints.NotEmpty;
+
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
+
+import co.za.myprofileservice.services.IsEmailValid;
 
 @Component
 public class EmailTemplateDTO {
 	
+	@NonNull
+	@NotEmpty(message = "Please fill in name field, name cannot be empty")
 	private String name;
+	@NonNull
+	@NotEmpty(message = "Please fill in email field, email cannot be empty")
+	@IsEmailValid
 	private String email;
+	@NonNull
+	@NotEmpty(message = "Please fill in message field, message cannot be empty")
 	private String message;
+	@NonNull
+	@NotEmpty(message = "Please fill in message field, message cannot be empty")
 	private String subject;
 	
 	public String getName() {

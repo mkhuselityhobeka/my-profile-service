@@ -16,7 +16,7 @@ public class EmailTemplateServiceImpl implements EmailTemplaterService{
 	EmailTemplateDTO emailTemplate;
 	
 	@Override
-	public EmailTemplateDTO sendEmail(EmailTemplateDTO emailTemplate) {
+	public EmailTemplateDTO sendEmail(EmailTemplateDTO emailTemplate){
 		
         if(emailTemplate != null) {
            SimpleMailMessage mailMessage = new SimpleMailMessage();
