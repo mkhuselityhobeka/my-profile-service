@@ -11,18 +11,15 @@ import org.springframework.http.ResponseEntity;
 import co.za.myprofileservice.MyProfileServiceApplication;
 import co.za.myprofileservice.data.EmailTemplateDTO;
 
-//@RunWith(SpringRunner.class)
 @SpringBootTest(classes = MyProfileServiceApplication.class, 
 webEnvironment = WebEnvironment.RANDOM_PORT)
 class EmailTemplateControllerTest {
 
     @LocalServerPort
 	private int port;
-    
     private String url = "http://localhost:";
     @Autowired
     private TestRestTemplate restTemplate;
-    
     @Autowired
     EmailTemplateDTO emailTemplateDTO;
 	
