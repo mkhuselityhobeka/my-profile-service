@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import co.za.myprofileservice.data.EmailTemplateDTO;
 import co.za.myprofileservice.servicesImpl.EmailTemplateServiceImpl;
 
-@RequestMapping("/mkhuseli/send")
+@RequestMapping("/mkhuseli")
 @RestController
 @CrossOrigin
 public class EmailTemplateController {
@@ -25,7 +25,7 @@ public class EmailTemplateController {
 		
 	}
 	//sending email
-	@PostMapping("/email")
+	@PostMapping("send/email")
 	public ResponseEntity<EmailTemplateDTO> sendEmail(@Valid @RequestBody EmailTemplateDTO emailTemplate){
 		
 		return new ResponseEntity<>(emailTemplateServiceImpl.sendEmail(emailTemplate), HttpStatus.CREATED);

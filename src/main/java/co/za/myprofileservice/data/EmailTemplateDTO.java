@@ -26,6 +26,23 @@ public class EmailTemplateDTO {
 	@NotEmpty(message = "Please fill in message field, message cannot be empty")
 	private String subject;
 	
+	public EmailTemplateDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public EmailTemplateDTO(@NotEmpty(message = "Please fill in name field, name cannot be empty") String name,
+			@NotEmpty(message = "Please fill in email field, email cannot be empty") String email,
+			@NotEmpty(message = "Please fill in message field, message cannot be empty") String message,
+			@NotEmpty(message = "Please fill in message field, message cannot be empty") String subject) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.message = message;
+		this.subject = subject;
+	}
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -73,6 +90,5 @@ public class EmailTemplateDTO {
 	}
 	
 
-	
 
 }
