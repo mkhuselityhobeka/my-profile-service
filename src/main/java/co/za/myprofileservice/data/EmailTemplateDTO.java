@@ -2,6 +2,7 @@ package co.za.myprofileservice.data;
 
 import java.util.Objects;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.lang.NonNull;
@@ -12,7 +13,7 @@ import co.za.myprofileservice.services.IsEmailValid;
 @Component
 public class EmailTemplateDTO {
 	
-	@NonNull
+	@NotBlank
 	@NotEmpty(message = "Please fill in name field, name cannot be empty")
 	private String name;
 	@NonNull
